@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="jmobile/jquery.mobile-1.4.5.min.css">
+	<script type="text/javascript" src="jmobile/jquery.min.js"></script>
+	<script type="text/javascript" src="jmobile/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+<div data-role="page" id="Calcu" data-theme="b">
+<div class="ui-field-contain">
+    <select onchange="document.location.href=this.value">
+	<option selected value="">Make a Selection</option>
+        <option value="#Calcu">Calculator</option>
+        <option value="#paint">Color</option>
+        <option value="#history">What i learn</option>
+    </select>
+</div>
+
+</div>
+
+<div data-role="page" id="paint" data-theme="b">
+<div class="ui-field-contain">
+    <select onchange="document.location.href=this.value"> 
+	<option selected value="">Make a Selection</option>
+        <option value="#Calcu">Calculator</option>
+        <option value="#paint">Color</option>
+        <option value="#history">What i learn</option>
+    </select>
+</div>
+		<div data-role="content">
+         <div class="ui-grid-b">
+                <div class="ui-block-a">
+                    <label for="red">Kemerahan:</label>
+                    <input type="range" id="red" min="0" max="255" value="0">
+                </div>
+
+                <div class="ui-block-b">
+                     <label for="blue">Kebiruan:</label>
+                    <input type="range" id="blue" min="0" max="255" value="0">
+                </div>
+
+                <div class="ui-block-c">
+                    <label for="green">Kehijauan:</label>
+                    <input type="range" id="green" min="0" max="255" value="0">
+                </div>
+            </div>
+
+            <button data-theme="a" class="key" id="color">Try</button>
+            <input type="text" id="result" value="" disabled>
+            
+        </div>
+
+  
+</div>
+
+<div data-role="page" id="history" data-theme="b">
+<div class="ui-field-contain">
+   <select  onchange="document.location.href=this.value"> 
+	<option selected value="">Make a Selection</option>
+        <option value="#Calcu">Calculator</option>
+        <option value="#paint">Color</option>
+        <option value="#history">What i learn</option>
+    </select>
+</div>
+<h2> minggu pertama kita belajar github cara2 menggunakan command dan menggunakan github tools</h2>
+<h2> Slider dan teman-temannya merupakan pelajaran kedua yang kita yang dapatkan dan merupakan jquery mobile</h2>
+<div>
+	<div data-role="content">
+			<label for="slider-1">Please Slide:</label>
+			<input type="range" name="slider-1" id="slider-1" value="0" min="0" max="100" data-highlight="true">
+			<br>
+	</div>	
+</div>
+<div>
+	 <ul data-role="listview" data-inset="true">
+		            <li data-role=List-divider data-theme=d>Bermain</li>
+		            <li data-theme=b>Dota2</li>
+		            <li data-theme=b>Rainbow six siege</li>
+		            <li data-role=List-divider data-theme=d>Singing</li>
+		            <li data-theme=b>Weebs</li>
+		            <li data-theme=b>Western</li>
+		            <li data-role=List-divider data-theme=d>Working</li>
+		            <li data-theme=b>Home</li>
+		            <li data-theme=b>Company</li>
+	</ul>
+    <h2>Kemudian minggu ketiga mempelajari Angular</h2>
+	<h2>kemudian yang kita lakukan sekarang adalah </h2>
+</div>
+<div>
+	<button class="show-page-loading-msg" data-theme="a" data-textonly="true" data-textvisible="true" data-msgtext="Custom Loader" data-inline="true" data-html="<span class='ui-bar ui-shadow ui-overlay-d ui-corner-all'><img src='doge.jpg'><h2>is loading for you ...</h2></span>" data-iconpos="right">Custom HTML</button>
+	<button class="hide-page-loading-msg" data-inline="true" data-icon="delete">Hide</button>
+</div>
+<div>
+<h2>Responsive Grid</h2>
+<div class="ui-grid-b my-breakpoint">
+	<div class="ui-block-a">Block A</div>
+	<div class="ui-block-b">Block B</div>
+	<div class="ui-block-c">Block C</div>
+</div>
+<h2>Begitulah yang saya pelajari selama ini</h2>
+</div>
+</div>
+<script type="text/javascript">
+$("#color").click(function(){
+        $("#result").css("background-color", `rgb(${$("#red").val()},${$("#green").val()},${$("#blue").val()})`);
+        });
+$( document ).on( "click", ".show-page-loading-msg", function() {
+    var $this = $( this ),
+        theme = $this.jqmData( "theme" ) || $.mobile.loader.prototype.options.theme,
+        msgText = $this.jqmData( "msgtext" ) || $.mobile.loader.prototype.options.text,
+        textVisible = $this.jqmData( "textvisible" ) || $.mobile.loader.prototype.options.textVisible,
+        textonly = !!$this.jqmData( "textonly" );
+        html = $this.jqmData( "html" ) || "";
+    $.mobile.loading( "show", {
+            text: msgText,
+            textVisible: textVisible,
+            theme: theme,
+            textonly: textonly,
+            html: html
+    });
+})
+.on( "click", ".hide-page-loading-msg", function() {
+    $.mobile.loading( "hide" );
+});
+$( "#mypanel" ).trigger( "updatelayout" );
+</script>
+</body>
+</html>
