@@ -15,7 +15,42 @@
         <option value="#history">What i learn</option>
     </select>
 </div>
-
+<div data-role="content">
+            <div data-role="fieldcontain" id="item1">
+                <fieldset data-role="controlgroup">
+                    <label for="item1">
+                        item1
+                    </label>
+                    <input name="item1num" id="item1num" placeholder="" value="" type="number" />
+                </fieldset>
+            </div>
+            <a data-role="button" data-transition="slidefade" href="#penambah" data-theme="b">
+                Next
+            </a>
+        </div>
+    </div>
+    <div data-role="page" id="penambah">
+        <div data-role="header" data-add-back-btn="true">
+            <h1>Tambahkan</h1>
+        </div>
+        <div data-role="content">
+            <div data-role="fieldcontain" id="item1">
+                <fieldset data-role="controlgroup">
+                    <label for="item2">
+                        item2
+                    </label>
+                    <input name="item2num" id="item2num" placeholder="" value="" type="number" />
+                </fieldset>
+            </div>
+            <input id="btnAdd" type="submit" value="Submit" onclick="sum();" data-theme="b" />
+            <span id="showResult"></span>
+        </div>
+    </div>
+    <div data-role="page" id="page3">
+        <div data-role="content">
+            <span id="showResult"></span>
+        </div>
+</div>
 </div>
 
 <div data-role="page" id="paint" data-theme="b">
@@ -123,6 +158,16 @@ $( document ).on( "click", ".show-page-loading-msg", function() {
     $.mobile.loading( "hide" );
 });
 $( "#mypanel" ).trigger( "updatelayout" );
+function sum()
+{
+
+
+    var item1num = document.getElementById('item1num').value;
+    var item2num = document.getElementById('item2num').value;
+
+        {result = parseInt(item1num)*parseInt(item2num);
+
+        document.getElementById("showResult").innerHTML = (result);}}
 </script>
 </body>
 </html>
